@@ -1,0 +1,50 @@
+1) How to download rasa-x in cmd
+--> link :  https://stackoverflow.com/questions/65806524/pip-install-rasa-x-takes-forever#
+pip install --upgrade pip==20.2
+
+--> if there is any error while running rasa-x must degrade the version of sanic
+pip install sanic==19.9.0
+
+--> initially using sanic 20.12.2
+
+pip3 install rasa-x --extra-index-url https://pypi.rasa.com/simple
+
+pip install rasa[spacy]
+
+python -m spacy download en_core_web_md
+python -m spacy link en_core_web_en
+
+2) How to install Rasa
+-- create a conda virtual enviroment 
+-- here we are creating a virtual enviroment with the name chat_bot_1
+
+conda create --name chat_bot_1 python==3.7.6
+
+conda install ujson
+
+conda install tensorflow
+
+
+### As we are not able to link with spacy model 
+
+
+(chat_bot_1) C:\Users\deepankar pathak\Desktop\chat_bot_1>python -m spacy link spacy.load('en_core_web_md')
+usage: spacy link [-h] [-f] origin link_name [model_path]
+spacy link: error: the following arguments are required: link_name
+
+
+----> so we change our config file as described below
+
+ --> link : https://github.com/RasaHQ/rasa/issues/4650
+
+# Configuration for Rasa NLU.
+# https://rasa.com/docs/rasa/nlu/components/
+language:  en_core_web_md
+pipeline: pretrained_embeddings_spacy
+
+# Configuration for Rasa Core.
+# https://rasa.com/docs/rasa/core/policies/
+policies:
+  - name: MemoizationPolicy
+  - name: KerasPolicy
+  - name: MappingPolicy
