@@ -1,0 +1,37 @@
+when we want to add link (website) to chat bot we can add in two way below we have described the changes in
+respective file to add link 
+
+## Method 1
+
+
+--> domain.yml 
+
+responses:
+  utter_info:
+  - text: 'Here is the
+  
+  
+--> stories.yml
+
+- story: happy info path
+  steps: 
+    - intent: more_info
+    - action: utter_info
+    
+ ---> nlu.yml
+ 
+ - intent: more_info
+  examples: |
+    - i want to know about your website
+    - tell me more about your site 
+    - what about your website
+    
+    
+   # if we want link will open when we click on word website then we can do this as 
+   
+   --> nlu.yml
+   
+     utter_info:
+  - text: Here is the link to our [website](http://www.innovateyourself.in)
+    
+    
