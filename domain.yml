@@ -1,0 +1,74 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- what_do_you_have:
+    use_entities: true
+- vegetarian:
+    use_entities: true
+- non_veg:
+    use_entities: true
+- order_name_veg:
+    use_entities: true
+- order_name_non_veg:
+    use_entities: true
+entities: []
+slots: {}
+responses:
+  utter_botgreet:
+  - text: How can i help you ?
+  utter_veg_non_veg:
+  - text: What would you prefer veg or non-veg?
+  utter_veg:
+  - text: we have mix veg,panner butter masala, mushroom etc?
+  utter_non_veg:
+  - text: We have eggs curry, chicken, eggs etc?
+  utter_anythingelse:
+  - text: Is there any thing else?
+  utter_thanks:
+  - text: Thank you for order.
+  utter_greet:
+  - text: Hey! How are you?
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+actions:
+- utter_botgreet
+- utter_veg_non_veg
+- utter_veg
+- utter_non_veg
+- utter_thanks
+- utter_greet
+- utter_cheer_up
+- utter_did_that_help
+- utter_happy
+- utter_goodbye
+- utter_iamabot
+- utter_anythingelse
+forms: {}
+e2e_actions: []
