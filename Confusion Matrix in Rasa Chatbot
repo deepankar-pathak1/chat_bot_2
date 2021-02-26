@@ -1,0 +1,6 @@
+To test Rasa chat bot we have to enter this command in same dir and in same env :-> rasa test
+
+Then we will get confusion matrix and all parameter in command prompt 
+
+To go dipper, you can elaborate that in your text editor a new folder is created name as result where you will get all the desired result like confusion matrix and histrogram so
+, it will be helpful to understand our model in more detail
