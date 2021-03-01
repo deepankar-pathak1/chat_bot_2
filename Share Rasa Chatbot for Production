@@ -1,0 +1,12 @@
+How can we share rasa chat bot for production 
+-> run this :- rasa x
+then window will open where you have chat bot powered by rasa share it
+it will generate a link will which will be local host : http://localhost:5002/guest/conversations/production/e3c281e2a94e461b9c4c81e90f8ef362
+but this link will not work for another system apart from our box
+to solve this issue install ngrok in respective folder
+go to cmd and run ngrok http 5002
+then copy the link which is availabe in cmd after running this command 
+then copy this which is available in forwarding :- http://38d508e07106.ngrok.io and 
+replace the link which is provide by local host with this 
+
+http://38d508e07106.ngrok.io/guest/conversations/production/e3c281e2a94e461b9c4c81e90f8ef362
